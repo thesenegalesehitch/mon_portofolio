@@ -7,6 +7,7 @@ import Education from './components/Education';
 import Projects from './components/Projects';
 import Interests from './components/Interests';
 import Contact from './components/Contact';
+import ThreeBackground from './components/ThreeBackground';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +53,8 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 relative">
+      <ThreeBackground />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,11 +71,10 @@ function App() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className={`text-sm font-medium transition-colors ${
-                    activeSection === link.id
-                      ? 'text-emerald-600'
-                      : 'text-gray-700 hover:text-emerald-600'
-                  }`}
+                  className={`text-sm font-medium transition-colors ${activeSection === link.id
+                    ? 'text-emerald-600'
+                    : 'text-gray-700 hover:text-emerald-600'
+                    }`}
                 >
                   {link.label}
                 </button>
@@ -100,11 +101,10 @@ function App() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                    activeSection === link.id
-                      ? 'bg-emerald-50 text-emerald-600'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
+                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${activeSection === link.id
+                    ? 'bg-emerald-50 text-emerald-600'
+                    : 'text-gray-700 hover:bg-gray-50'
+                    }`}
                 >
                   {link.label}
                 </button>
@@ -115,7 +115,7 @@ function App() {
       </nav>
 
       {/* Main Content */}
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />
@@ -126,7 +126,7 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-8">
+      <footer className="bg-slate-900 text-white py-8 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center space-y-4">
             <div className="flex space-x-6">

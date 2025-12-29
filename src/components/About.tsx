@@ -1,4 +1,5 @@
 import { MapPin, Calendar, Languages, User } from 'lucide-react';
+import AnimatedSection from './AnimatedSection';
 
 const About = () => {
   const facts = [
@@ -27,15 +28,17 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            À Propos de Moi
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto"></div>
-        </div>
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+              À Propos de Moi
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto"></div>
+          </div>
+        </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <AnimatedSection delay={0.2} className="space-y-6">
             <div className="prose prose-lg text-gray-600">
               <p className="leading-relaxed">
                 Passionné par l'informatique et les jeux vidéos depuis mon plus jeune âge, j'ai toujours
@@ -54,8 +57,8 @@ const About = () => {
 
               <p className="leading-relaxed">
                 Je me sens particulièrement à l'aise avec <span className="font-semibold text-emerald-600">Java
-                et Python</span>, ainsi que leurs frameworks comme <span className="font-semibold text-emerald-600">
-                Spring Boot et Django</span>. Au-delà du développement, je m'intéresse vivement à
+                  et Python</span>, ainsi que leurs frameworks comme <span className="font-semibold text-emerald-600">
+                  Spring Boot et Django</span>. Au-delà du développement, je m'intéresse vivement à
                 l'<span className="font-semibold text-emerald-600">intelligence artificielle</span> et à la
                 <span className="font-semibold text-emerald-600"> blockchain</span>, domaines dans lesquels
                 je mène de nombreuses recherches.
@@ -66,9 +69,9 @@ const About = () => {
                 de petits business en e-commerce, création de contenu YouTube et TikTok faceless, trading et crypto.
               </p>
             </div>
-          </div>
+          </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <AnimatedSection delay={0.4} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {facts.map((fact, index) => (
               <div
                 key={index}
@@ -85,28 +88,30 @@ const About = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </AnimatedSection>
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Prêt à collaborer ?</h3>
-              <p className="text-emerald-50">
-                Je suis toujours ouvert à de nouvelles opportunités et projets passionnants.
-              </p>
+        <AnimatedSection delay={0.6}>
+          <div className="mt-12 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">Prêt à collaborer ?</h3>
+                <p className="text-emerald-50">
+                  Je suis toujours ouvert à de nouvelles opportunités et projets passionnants.
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-4 bg-white text-emerald-600 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap"
+              >
+                Travaillons Ensemble
+              </button>
             </div>
-            <button
-              onClick={() => {
-                const element = document.getElementById('contact');
-                element?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="px-8 py-4 bg-white text-emerald-600 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap"
-            >
-              Travaillons Ensemble
-            </button>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

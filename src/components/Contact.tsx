@@ -1,4 +1,6 @@
 import { Mail, Phone, Github, Twitter, Instagram, Linkedin, MessageSquare, Camera } from 'lucide-react';
+import AnimatedSection from './AnimatedSection';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const contactMethods = [
@@ -72,23 +74,29 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Contactez-Moi
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            N'hésitez pas à me contacter pour des opportunités de collaboration, des projets ou simplement pour échanger
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+              Contactez-Moi
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              N'hésitez pas à me contacter pour des opportunités de collaboration, des projets ou simplement pour échanger
+            </p>
+          </div>
+        </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
-          <div className="space-y-6">
+          <AnimatedSection delay={0.2} className="space-y-6">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Informations de Contact</h3>
               <div className="space-y-6">
                 {contactMethods.map((method, index) => (
-                  <div key={index} className="flex items-start gap-4">
+                  <motion.div
+                    key={index}
+                    whileHover={{ x: 5 }}
+                    className="flex items-start gap-4"
+                  >
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-3 rounded-xl">
                       {method.icon}
                     </div>
@@ -109,7 +117,7 @@ const Contact = () => {
                         </a>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -125,9 +133,9 @@ const Contact = () => {
                 <span className="font-semibold">Disponible maintenant</span>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
 
-          <div>
+          <AnimatedSection delay={0.4}>
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Réseaux Sociaux</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -158,7 +166,8 @@ const Contact = () => {
             <div className="mt-6 bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-4">WhatsApp QR Code</h3>
               <div className="flex justify-center">
-                <img
+                <motion.img
+                  whileHover={{ scale: 1.05 }}
                   src="/image.png"
                   alt="WhatsApp QR Code"
                   className="w-48 h-48 rounded-xl border-4 border-gray-100"
@@ -168,32 +177,38 @@ const Contact = () => {
                 Scannez pour m'ajouter sur WhatsApp
               </p>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white text-center">
-          <h3 className="text-3xl font-bold mb-4">Travaillons Ensemble !</h3>
-          <p className="text-lg text-blue-50 max-w-3xl mx-auto mb-6">
-            Que vous ayez un projet en tête, une opportunité à discuter, ou simplement envie d'échanger
-            sur la tech, n'hésitez pas à me contacter. Je réponds généralement sous 24h.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="mailto:ndouralexandre09@gmail.com"
-              className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              Envoyer un Email
-            </a>
-            <a
-              href="https://wa.me/221773865744"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-green-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              WhatsApp
-            </a>
+        <AnimatedSection delay={0.6}>
+          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white text-center">
+            <h3 className="text-3xl font-bold mb-4">Travaillons Ensemble !</h3>
+            <p className="text-lg text-blue-50 max-w-3xl mx-auto mb-6">
+              Que vous ayez un projet en tête, une opportunité à discuter, ou simplement envie d'échanger
+              sur la tech, n'hésitez pas à me contacter. Je réponds généralement sous 24h.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="mailto:ndouralexandre09@gmail.com"
+                className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+              >
+                Envoyer un Email
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://wa.me/221773865744"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-green-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+              >
+                WhatsApp
+              </motion.a>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
