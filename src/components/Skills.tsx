@@ -38,6 +38,7 @@ const Skills = () => {
         { name: 'Django', level: 90, color: 'from-green-700 to-teal-700' },
         { name: 'React', level: 80, color: 'from-cyan-500 to-blue-500' },
         { name: 'Express.js', level: 75, color: 'from-gray-600 to-slate-600' },
+        { name: 'Laravel', level: 70, color: 'from-purple-600 to-pink-600' },
       ],
     },
     {
@@ -102,7 +103,6 @@ const Skills = () => {
                   <div key={skillIndex} className="group">
                     <div className="flex justify-between mb-2">
                       <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-emerald-600 font-semibold">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                       <motion.div
@@ -126,11 +126,6 @@ const Skills = () => {
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                'Algorithmique',
-                'Mathématiques',
-                'Systèmes Binaires',
-                'Architecture des Ordinateurs',
-                'Systèmes d\'Exploitation',
                 'Entrepreneuriat',
                 'E-commerce',
                 'Trading & Crypto',
