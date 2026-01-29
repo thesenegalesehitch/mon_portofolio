@@ -34,6 +34,24 @@ const Education = () => {
       icon: <Award className="text-emerald-600" size={32} />,
       color: 'from-blue-500 to-cyan-500',
     },
+    {
+      degree: 'Diplômes & Certifications',
+      institution: 'Divers',
+      period: 'Obtenus',
+      location: 'En ligne / Divers',
+      description: 'Certifications et diplômes obtenus dans divers domaines techniques et professionnels',
+      highlights: [
+        'Diplôme 1: Voir le PDF',
+        'Diplôme 2: Voir le PDF',
+        'Diplôme 3: Voir le PDF',
+        'Diplôme 4: Voir le PDF',
+        'Diplôme 5: Voir le PDF',
+        'Diplôme 6: Voir le PDF',
+      ],
+      icon: <Award className="text-purple-600" size={32} />,
+      color: 'from-purple-500 to-indigo-500',
+      links: ['/1.pdf', '/2.pdf', '/3.pdf', '/4.pdf', '/5.pdf', '/6.pdf'],
+    },
   ];
 
   const coursework = [
@@ -95,13 +113,24 @@ const Education = () => {
                     <p className="text-gray-600 mb-6">{edu.description}</p>
 
                     <div className="space-y-3">
-                      {edu.highlights.map((highlight, hIndex) => (
-                        <div key={hIndex} className="flex items-start gap-3">
-                          <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
-                          <p className="text-gray-700">{highlight}</p>
-                        </div>
-                      ))}
-                    </div>
+                       {edu.highlights.map((highlight, hIndex) => (
+                         <div key={hIndex} className="flex items-start gap-3">
+                           <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                           {edu.links && highlight.includes('Voir le PDF') ? (
+                             <a
+                               href={edu.links[hIndex]}
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className="text-gray-700 hover:text-emerald-600 underline"
+                             >
+                               {highlight}
+                             </a>
+                           ) : (
+                             <p className="text-gray-700">{highlight}</p>
+                           )}
+                         </div>
+                       ))}
+                     </div>
                   </div>
                 </div>
               </motion.div>
@@ -135,35 +164,6 @@ const Education = () => {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.5}>
-          <div className="bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl p-8 shadow-lg mb-8">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-white/20 p-4 rounded-xl">
-                <Award className="text-white" size={32} />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Diplômes & Certifications</h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4, 5, 6].map((num) => (
-                <motion.a
-                  key={num}
-                  href={`/${num}.pdf`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.6 + (num * 0.1) }}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
-                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-white hover:bg-white/20 transition-all duration-300 block text-center"
-                >
-                  <h4 className="font-bold text-lg mb-2">Diplôme {num}</h4>
-                  <p className="text-white/80">Voir le PDF</p>
-                </motion.a>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
 
         <AnimatedSection delay={0.6}>
           <div className="mt-12 text-center">
