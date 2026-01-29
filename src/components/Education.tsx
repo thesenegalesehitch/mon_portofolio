@@ -51,6 +51,45 @@ const Education = () => {
     'Entrepreneuriat Digital',
   ];
 
+  const certifications = [
+    {
+      title: 'Certification 1',
+      issuer: 'Émetteur 1',
+      date: 'Date 1',
+      pdf: '/Diplomes/1.pdf',
+    },
+    {
+      title: 'Certification 2',
+      issuer: 'Émetteur 2',
+      date: 'Date 2',
+      pdf: '/Diplomes/2.pdf',
+    },
+    {
+      title: 'Certification 3',
+      issuer: 'Émetteur 3',
+      date: 'Date 3',
+      pdf: '/Diplomes/3.pdf',
+    },
+    {
+      title: 'Certification 4',
+      issuer: 'Émetteur 4',
+      date: 'Date 4',
+      pdf: '/Diplomes/4.pdf',
+    },
+    {
+      title: 'Certification 5',
+      issuer: 'Émetteur 5',
+      date: 'Date 5',
+      pdf: '/Diplomes/5.pdf',
+    },
+    {
+      title: 'Certification 6',
+      issuer: 'Émetteur 6',
+      date: 'Date 6',
+      pdf: '/Diplomes/6.pdf',
+    },
+  ];
+
   return (
     <section id="education" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,6 +175,37 @@ const Education = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.6}>
+          <div className="bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl p-8 shadow-lg mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-white/20 p-4 rounded-xl">
+                <Award className="text-white" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-white">Certifications & Diplômes</h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {certifications.map((cert, index) => (
+                <motion.a
+                  key={index}
+                  href={cert.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.7 + (index * 0.1) }}
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-white hover:bg-white/20 transition-all duration-300 block"
+                >
+                  <h4 className="font-bold text-lg mb-2">{cert.title}</h4>
+                  <p className="text-white/80 mb-1">{cert.issuer}</p>
+                  <p className="text-white/60 text-sm">{cert.date}</p>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.8}>
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-6">
               En apprentissage continu et toujours à la recherche de nouvelles connaissances
