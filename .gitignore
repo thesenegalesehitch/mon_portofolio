@@ -21,3 +21,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+*.pdf
+public/*.jpg
+public/Diplomes/

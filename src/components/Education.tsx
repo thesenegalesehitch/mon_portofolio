@@ -170,7 +170,6 @@ const Education = () => {
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
               Formation & Éducation
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Mon parcours académique et ma formation continue en développement
             </p>
@@ -203,7 +202,7 @@ const Education = () => {
                 >
                   <div className="flex-shrink-0 mb-6">
                     <div className={`bg-gradient-to-br ${edu.color} p-6 rounded-2xl shadow-lg`}>
-                      {edu.icon}
+                      {/* {edu.icon} */}
                     </div>
                   </div>
 
@@ -224,7 +223,7 @@ const Education = () => {
                     <div className="space-y-3">
                        {edu.highlights.map((highlight, hIndex) => (
                          <div key={hIndex} className="flex items-start gap-3">
-                           <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                           <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2" />
                            <p className="text-gray-700">{highlight}</p>
                          </div>
                        ))}
@@ -251,8 +250,9 @@ const Education = () => {
             </AnimatedSection>
           ))}
         </div>
+      </div>
 
-        <AnimatedSection delay={0.4}>
+      <AnimatedSection delay={0.4}>
           <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl p-8 shadow-lg mb-8">
             <div className="flex items-center gap-4 mb-6">
               <div className="bg-white/20 p-4 rounded-xl">
