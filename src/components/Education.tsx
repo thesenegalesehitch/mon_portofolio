@@ -35,22 +35,94 @@ const Education = () => {
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      degree: 'Diplômes & Certifications',
-      institution: 'Divers',
-      period: 'Obtenus',
-      location: 'En ligne / Divers',
-      description: 'Certifications et diplômes obtenus dans divers domaines techniques et professionnels',
+      degree: 'C++ Training Crash Course for C++ Beginners',
+      institution: 'Udemy - Crunch Coding Institute',
+      period: '27 janvier 2026',
+      location: 'En ligne',
+      description: 'Formation intensive en C++ pour débutants, couvrant les bases du langage de programmation',
       highlights: [
-        'Diplôme 1: Voir le PDF',
-        'Diplôme 2: Voir le PDF',
-        'Diplôme 3: Voir le PDF',
-        'Diplôme 4: Voir le PDF',
-        'Diplôme 5: Voir le PDF',
-        'Diplôme 6: Voir le PDF',
+        'Apprentissage des fondamentaux du C++',
+        'Durée: 39 minutes',
+        'Certificat Udemy: UC-23fe853f-260b-40a7-905a-2daf51bfdae2',
       ],
       icon: <Award className="text-purple-600" size={32} />,
       color: 'from-purple-500 to-indigo-500',
-      links: ['/1.pdf', '/2.pdf', '/3.pdf', '/4.pdf', '/5.pdf', '/6.pdf'],
+      image: '/1.jpg',
+    },
+    {
+      degree: 'Learning & Development with Generative AI',
+      institution: 'Udemy - Learnsector LLP',
+      period: '27 janvier 2026',
+      location: 'En ligne',
+      description: 'Formation sur l\'apprentissage et le développement avec l\'intelligence artificielle générative',
+      highlights: [
+        'Exploration des technologies d\'IA générative',
+        'Durée: 1 heure',
+        'Certificat Udemy: UC-47fa2280-5de9-4f2c-b92f-43135dcbfcd5',
+      ],
+      icon: <Award className="text-purple-600" size={32} />,
+      color: 'from-indigo-500 to-blue-500',
+      image: '/2.jpg',
+    },
+    {
+      degree: 'Web3 Development Essentials',
+      institution: 'Udemy - MT Institute of Management, Technology and Finance',
+      period: '27 janvier 2026',
+      location: 'En ligne',
+      description: 'Essentiels du développement Web3, technologies blockchain et décentralisées',
+      highlights: [
+        'Fondamentaux du développement Web3',
+        'Durée: 31 minutes',
+        'Certificat Udemy: UC-333e9ce8-21aa-4ea9-b914-988824375829',
+      ],
+      icon: <Award className="text-purple-600" size={32} />,
+      color: 'from-blue-500 to-cyan-500',
+      image: '/3.jpg',
+    },
+    {
+      degree: 'Facebook Ads Targeting Strategies For Success Fast',
+      institution: 'Udemy - Yasir Ahmed, MBA',
+      period: '27 janvier 2026',
+      location: 'En ligne',
+      description: 'Stratégies de ciblage publicitaire sur Facebook pour réussir rapidement',
+      highlights: [
+        'Techniques de ciblage Facebook Ads',
+        'Durée: 1 heure',
+        'Certificat Udemy: UC-66107cd4-d206-4eb6-b5f0-74674c0b1a9a',
+      ],
+      icon: <Award className="text-purple-600" size={32} />,
+      color: 'from-cyan-500 to-teal-500',
+      image: '/4.jpg',
+    },
+    {
+      degree: 'Your WORDS, Powerful Tools',
+      institution: 'Udemy - Baba Oyewole, Helen Hicks',
+      period: '27 janvier 2026',
+      location: 'En ligne',
+      description: 'Utilisation des mots comme outils puissants pour la communication et l\'influence',
+      highlights: [
+        'Maîtrise de la communication verbale',
+        'Durée: 1 heure',
+        'Certificat Udemy: UC-68763964-f493-4f24-aea5-cad3fd150526',
+      ],
+      icon: <Award className="text-purple-600" size={32} />,
+      color: 'from-teal-500 to-green-500',
+      image: '/5.jpg',
+    },
+    {
+      degree: 'Javascript Practicals Crash Course',
+      institution: 'Udemy - PROPER DOT INSTITUTE',
+      period: '27 janvier 2026',
+      location: 'En ligne',
+      description: 'Cours intensif pratique sur JavaScript pour les débutants',
+      highlights: [
+        'Pratiques essentielles de JavaScript',
+        'Durée: 38 minutes',
+        'Certificat Udemy: UC-f33d3094-3344-4853-9d9d-035f5b5ea0a8',
+      ],
+      icon: <Award className="text-purple-600" size={32} />,
+      color: 'from-green-500 to-emerald-500',
+      image: '/6.jpg',
     },
   ];
 
@@ -116,21 +188,20 @@ const Education = () => {
                        {edu.highlights.map((highlight, hIndex) => (
                          <div key={hIndex} className="flex items-start gap-3">
                            <div className="flex-shrink-0 w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
-                           {edu.links && highlight.includes('Voir le PDF') ? (
-                             <a
-                               href={edu.links[hIndex]}
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               className="text-gray-700 hover:text-emerald-600 underline"
-                             >
-                               {highlight}
-                             </a>
-                           ) : (
-                             <p className="text-gray-700">{highlight}</p>
-                           )}
+                           <p className="text-gray-700">{highlight}</p>
                          </div>
                        ))}
                      </div>
+
+                     {edu.image && (
+                       <div className="mt-6">
+                         <img
+                           src={edu.image}
+                           alt={edu.degree}
+                           className="w-full max-w-md mx-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                         />
+                       </div>
+                     )}
                   </div>
                 </div>
               </motion.div>
