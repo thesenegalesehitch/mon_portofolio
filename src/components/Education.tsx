@@ -1,8 +1,23 @@
-import { GraduationCap, BookOpen, Award } from 'lucide-react';
+import { GraduationCap, BookOpen, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
 const Education = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
+
   const educationPath = [
     {
       degree: 'BTS Développement Back-End',
@@ -162,13 +177,30 @@ const Education = () => {
           </div>
         </AnimatedSection>
 
-        <div className="space-y-12 mb-16">
-          {educationPath.map((edu, index) => (
-            <AnimatedSection key={index} delay={index * 0.2}>
-              <motion.div
-                whileHover={{ y: -5 }}
-                className="relative bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
+        <div className="relative mb-16">
+          <button
+            onClick={scrollLeft}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition-colors duration-300"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={scrollRight}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-emerald-600 text-white p-3 rounded-full shadow-lg hover:bg-emerald-700 transition-colors duration-300"
+          >
+            <ChevronRight size={24} />
+          </button>
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto space-x-8 pb-4 scrollbar-hide snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {educationPath.map((edu, index) => (
+              <AnimatedSection key={index} delay={index * 0.2}>
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="flex-shrink-0 w-96 bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 snap-center"
+                >
                 <div className="flex flex-col lg:flex-row gap-8">
                   <div className="flex-shrink-0">
                     <div className={`bg-gradient-to-br ${edu.color} p-6 rounded-2xl shadow-lg`}>
