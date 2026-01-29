@@ -201,8 +201,7 @@ const Education = () => {
                   whileHover={{ y: -5 }}
                   className="flex-shrink-0 w-96 bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 snap-center"
                 >
-                <div className="flex flex-col lg:flex-row gap-8">
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 mb-6">
                     <div className={`bg-gradient-to-br ${edu.color} p-6 rounded-2xl shadow-lg`}>
                       {edu.icon}
                     </div>
@@ -248,7 +247,6 @@ const Education = () => {
                        </div>
                      )}
                   </div>
-                </div>
               </motion.div>
             </AnimatedSection>
           ))}
