@@ -22,7 +22,7 @@ const Education = () => {
     },
     {
       degree: 'Baccalauréat Scientifique',
-      institution: 'Lycée de Rufisque',
+      institution: 'Lycée Camp Marchand de Rufisque',
       period: 'Obtenu',
       location: 'Rufisque, Sénégal',
       description: 'Formation scientifique solide avec accent sur les mathématiques, la physique et les sciences',
@@ -48,6 +48,7 @@ const Education = () => {
       icon: <Award className="text-purple-600" size={32} />,
       color: 'from-purple-500 to-indigo-500',
       image: '/1.jpg',
+      url: 'http://ude.my/UC-23fe853f-260b-40a7-905a-2daf51bfdae2',
     },
     {
       degree: 'Learning & Development with Generative AI',
@@ -63,6 +64,7 @@ const Education = () => {
       icon: <Award className="text-purple-600" size={32} />,
       color: 'from-indigo-500 to-blue-500',
       image: '/2.jpg',
+      url: 'http://ude.my/UC-47fa2280-5de9-4f2c-b92f-43135dcbfcd5',
     },
     {
       degree: 'Web3 Development Essentials',
@@ -78,6 +80,7 @@ const Education = () => {
       icon: <Award className="text-purple-600" size={32} />,
       color: 'from-blue-500 to-cyan-500',
       image: '/3.jpg',
+      url: 'http://ude.my/UC-333e9ce8-21aa-4ea9-b914-988824375829',
     },
     {
       degree: 'Facebook Ads Targeting Strategies For Success Fast',
@@ -93,6 +96,7 @@ const Education = () => {
       icon: <Award className="text-purple-600" size={32} />,
       color: 'from-cyan-500 to-teal-500',
       image: '/4.jpg',
+      url: 'http://ude.my/UC-66107cd4-d206-4eb6-b5f0-74674cOb1a9a',
     },
     {
       degree: 'Your WORDS, Powerful Tools',
@@ -108,6 +112,7 @@ const Education = () => {
       icon: <Award className="text-purple-600" size={32} />,
       color: 'from-teal-500 to-green-500',
       image: '/5.jpg',
+      url: 'http://ude.my/UC-68763964-f493-4f24-aea5-cad3fd150526',
     },
     {
       degree: 'Javascript Practicals Crash Course',
@@ -123,6 +128,7 @@ const Education = () => {
       icon: <Award className="text-purple-600" size={32} />,
       color: 'from-green-500 to-emerald-500',
       image: '/6.jpg',
+      url: 'http://ude.my/UC-f33d3094-3344-4853-9d9d-035f5b5ea0a8',
     },
   ];
 
@@ -193,13 +199,20 @@ const Education = () => {
                        ))}
                      </div>
 
-                     {edu.image && (
+                     {edu.image && edu.url && (
                        <div className="mt-6">
-                         <img
-                           src={edu.image}
-                           alt={edu.degree}
-                           className="w-full max-w-md mx-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-                         />
+                         <a
+                           href={edu.url}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="block"
+                         >
+                           <img
+                             src={edu.image}
+                             alt={edu.degree}
+                             className="w-full max-w-md mx-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                           />
+                         </a>
                        </div>
                      )}
                   </div>
