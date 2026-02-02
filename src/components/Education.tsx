@@ -273,6 +273,38 @@ const Education = () => {
       image: '/14.jpg',
       url: 'http://ude.my/UC-a9d6eae0-c56f-4c9c-ba7e-68cdf0942aaf',
     },
+    {
+      degree: 'Generative AI Readiness, Implementation and Transformation',
+      institution: 'Udemy - Vasco Patrício, Anton Voroniuk, Anton Voroniuk Support',
+      period: '1 février 2026',
+      location: 'En ligne',
+      description: 'Formation sur la préparation, l\'implémentation et la transformation avec l\'intelligence artificielle générative',
+      highlights: [
+        'Mise en œuvre de l\'IA générative en entreprise',
+        'Durée: 8.5 heures au total',
+        'Certificat Udemy: UC-c7d974e2-47b9-47a6-8f0d-40e3d9c46b3d',
+      ],
+      icon: <Award className="text-purple-600" size={32} />,
+      color: 'from-emerald-500 to-teal-500',
+      image: '/15.jpg',
+      url: 'http://ude.my/UC-c7d974e2-47b9-47a6-8f0d-40e3d9c46b3d',
+    },
+    {
+      degree: 'JavaScript Fundamentals to Advanced: Full Stack Development',
+      institution: 'Udemy - Sayman Creative Institute, Alexandre Albert Ndour',
+      period: '1 février 2026',
+      location: 'En ligne',
+      description: 'Formation complète sur JavaScript du fondamentaux au développement Full Stack',
+      highlights: [
+        'Maîtrise complète de JavaScript pour le développement Full Stack',
+        'Durée: 5.5 heures au total',
+        'Certificat Udemy: UC-c1c651c7-dc8a-4d09-a93f-e9a6f289e60b',
+      ],
+      icon: <Award className="text-purple-600" size={32} />,
+      color: 'from-emerald-500 to-teal-500',
+      image: '/16.jpg',
+      url: 'http://ude.my/UC-c1c651c7-dc8a-4d09-a93f-e9a6f289e60b',
+    },
   ];
 
   const coursework = [
