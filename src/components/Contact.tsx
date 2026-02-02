@@ -1,8 +1,24 @@
 import { Mail, Phone, Github, Twitter, Instagram, Linkedin, MessageSquare, Camera } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const Contact = () => {
+  const [isAvailable, setIsAvailable] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const checkAvailability = () => {
+      const now = new Date();
+      setCurrentTime(now);
+      const hour = now.getHours();
+      setIsAvailable(hour >= 8 && hour < 20);
+    };
+
+    checkAvailability();
+    const interval = setInterval(checkAvailability, 60000);
+    return () => clearInterval(interval);
+  }, []);
   const contactMethods = [
     {
       icon: <Phone className="text-emerald-600" size={24} />,
@@ -129,9 +145,14 @@ const Contact = () => {
                 de collaboration. N'hésitez pas à me contacter !
               </p>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="font-semibold">Disponible maintenant</span>
+                <div className={`w-3 h-3 rounded-full animate-pulse ${isAvailable ? 'bg-green-400' : 'bg-red-400'}`}></div>
+                <span className="font-semibold">
+                  {isAvailable ? 'Disponible maintenant' : 'Non disponible (disponible de 8h à 20h)'}
+                </span>
               </div>
+              <p className="text-emerald-50 text-sm mt-2">
+                Heure actuelle: {currentTime.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+              </p>
             </div>
           </AnimatedSection>
 
