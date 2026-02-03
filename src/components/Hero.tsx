@@ -100,7 +100,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-700">Ans</p>
-                    <p className="text-xs text-gray-500">D'innovation</p>
+                    <p className="text-xs text-gray-500">Ans d'expérience</p>
                   </div>
                 </div>
               </motion.div>
