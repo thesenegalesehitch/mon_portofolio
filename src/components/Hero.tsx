@@ -82,7 +82,7 @@ const Hero = () => {
                 className="relative bg-white rounded-3xl p-2 shadow-2xl"
               >
                 <img
-                  src="/profile.jpg"
+                  src="/72H 2025_50.jpg"
                   alt="Alexandre Albert Ndour"
                   className="w-full h-auto rounded-2xl object-cover"
                 />
