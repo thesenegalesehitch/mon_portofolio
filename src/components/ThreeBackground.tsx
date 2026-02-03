@@ -30,7 +30,7 @@ const Scene = () => {
       
       {/* Subtle particle field */}
       <Sparkles
-        count={40}
+        count={30}
         scale={12}
         size={4}
         speed={0.4}
@@ -39,7 +39,7 @@ const Scene = () => {
       />
       
       <Sparkles
-        count={25}
+        count={20}
         scale={15}
         size={6}
         speed={0.3}
@@ -90,7 +90,7 @@ const Scene = () => {
 export default function ThreeBackground() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
-      <Canvas dpr={[1, 2]} gl={{ antialias: true, alpha: true }}>
+      <Canvas dpr={[1, 1.5]} gl={{ antialias: false, alpha: true }}>
         <PerspectiveCamera makeDefault position={[0, 0, 5]} />
         <Scene />
       </Canvas>
