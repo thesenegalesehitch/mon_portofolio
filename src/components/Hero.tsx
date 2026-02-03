@@ -96,7 +96,7 @@ const Hero = () => {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">20</span>
+                    <span className="text-white font-bold text-xl">21</span>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-700">Ans</p>
